@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../search_controller/my_search_controller.dart';
+import '../../../search_controller/my_search_controller.dart';
 
 class PageProvider extends StatelessWidget {
   const PageProvider({super.key});
@@ -22,9 +22,11 @@ class Page1 extends StatefulWidget {
   State<Page1> createState() => _Page1State();
 }
 
-class _Page1State extends State<Page1> {
+class _Page1State extends State<Page1> with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
+    super.build(context);
+
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Column(
@@ -57,4 +59,7 @@ class _Page1State extends State<Page1> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
